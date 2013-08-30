@@ -1,7 +1,5 @@
 grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
-grails.project.class.dir = "target/classes"
-grails.project.test.class.dir = "target/test-classes"
-grails.project.test.reports.dir = "target/test-reports"
+grails.project.work.dir = 'target'
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
@@ -41,23 +39,28 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
-        // runtime 'mysql:mysql-connector-java:5.1.22'
+        runtime 'mysql:mysql-connector-java:5.1.25'
+
+        test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
     }
 
     plugins {
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.3"
-        runtime ":resources:1.2"
-
-        // Uncomment these (or add new ones) to enable additional resources capabilities
-        //runtime ":zipped-resources:1.0"
-        //runtime ":cached-resources:1.0"
-        //runtime ":yui-minify-resources:0.1.5"
+        runtime ":resources:1.1.6"
+        runtime ":zipped-resources:1.0"
+        runtime ":cached-resources:1.0"
+        runtime ":database-migration:1.3.5"
 
         build ":tomcat:$grailsVersion"
 
-        runtime ":database-migration:1.3.2"
-
+        compile ":cache-headers:1.1.5"
         compile ':cache:1.0.1'
+
+        test(":spock:0.7") {
+            exclude "spock-grails-support"
+        }
+        test ":build-test-data:2.0.5"
+        test ":fixtures:1.2"
     }
 }
