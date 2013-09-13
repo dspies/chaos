@@ -1,6 +1,7 @@
 package org.chaos.core
 
 import groovy.transform.EqualsAndHashCode
+import org.chaos.core.attribute.*
 
 /**
  * Individuals related to a population.  These individuals
@@ -12,12 +13,18 @@ class Person {
 
     static transients = ['fullCommonName', 'fullLegalName']
 
+    Prefix prefix
     String firstName
     String preferredName
     String middleName
     String lastName
     String maidenName
+    Suffix suffix
     Date birthDate
+    MaritalStatus maritalStatus
+    Race race
+    Ethnicity ethnicity
+    Sex sex
     Boolean deceased
     String comments
     Person biologicalMother
@@ -25,11 +32,19 @@ class Person {
     Date dateCreated
     Date lastUpdated
 
+    static hasMany = [languages:Language]
+
     static constraints = {
+        prefix nullable: true
         firstName blank:false, maxSize: 50
         lastName blank:false, maxSize: 50
         middleName maxSize: 50
         maidenName maxSize: 50
+        suffix nullable: true
+        maritalStatus nullable: true
+        race nullable: true
+        ethnicity nullable: true
+        sex nullable: true
         comments maxSize: 255
         birthDate nullable:true, max: new Date()
         biologicalFather nullable:true
