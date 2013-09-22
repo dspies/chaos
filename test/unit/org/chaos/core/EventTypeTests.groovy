@@ -10,13 +10,15 @@ import org.junit.Before
 class EventTypeTests {
 
     Study study
+    StudyArm studyArm
     EventType existingEventType
     EventType eventType
 
     @Before
     void setup(){
         study = new Study(name:'study', description:'')
-        existingEventType = new EventType(name:'test', description:'simple description', study:study)
+        studyArm = new StudyArm(name: 'studyArm', study:study)
+        existingEventType = new EventType(name:'test', description:'simple description', studyArm:studyArm)
 
         mockForConstraintsTests(EventType, [existingEventType])
 
@@ -28,7 +30,7 @@ class EventTypeTests {
         assertFalse(eventType.validate())
         assertEquals('nullable', eventType.errors['name']);
         assertEquals('nullable', eventType.errors['description'])
-        assertEquals('nullable', eventType.errors['study'])
+        assertEquals('nullable', eventType.errors['studyArm'])
         assertEquals('nullable', eventType.errors['displayOrder'])
     }
 
@@ -36,7 +38,7 @@ class EventTypeTests {
         //Test for blank
         eventType.name = ''
         eventType.description = ''
-        eventType.study = study
+        eventType.studyArm = studyArm
         eventType.displayOrder = 0
 
         assertFalse(eventType.validate())
@@ -49,7 +51,7 @@ class EventTypeTests {
         eventType.description = """This is a very long description that does not describe the event type 
             but tests the description length validation for the population class. Unfortunately it takes 
             a lot of words to test the description length and therefore I must go on and on and on and on."""
-        eventType.study = study
+        eventType.studyArm = studyArm
         eventType.displayOrder = 0
 
         assertFalse(eventType.validate())
@@ -61,7 +63,7 @@ class EventTypeTests {
         //Test for unique values
         eventType.name = 'test'
         eventType.description = 'some description'
-        eventType.study = study
+        eventType.studyArm = studyArm
         eventType.displayOrder = 0
 
         assertFalse(eventType.validate())
@@ -72,7 +74,7 @@ class EventTypeTests {
 		//Create a valid event type
 		eventType.name = 'enrollment'
         eventType.description = 'Enrollment Visit'
-        eventType.study = study
+        eventType.studyArm = studyArm
         eventType.displayOrder = 1
 
 		assertTrue(eventType.validate())

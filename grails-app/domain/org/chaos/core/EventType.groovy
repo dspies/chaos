@@ -11,7 +11,7 @@ import groovy.transform.EqualsAndHashCode
 @EqualsAndHashCode
 class EventType {
 
-	Study study
+	StudyArm studyArm
 	String name
 	String description
 	Integer displayOrder
@@ -23,8 +23,8 @@ class EventType {
 	}
 	
     static constraints = {
-		study(nullable:false)
-		name(blank:false, unique: 'study', maxSize:25)
+		studyArm(nullable:false)
+		name(blank:false, unique: 'studyArm', maxSize:25)
 		description(nullable:false, blank:true, maxSize:255)
 		displayOrder(nullable:false)
     }
