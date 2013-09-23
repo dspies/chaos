@@ -14,6 +14,8 @@ class StudyCenter {
 	String description
 	Date dateCreated
 	Date lastUpdated
+
+    static hasMany = [studies:Study]
 	
     static constraints = {
 		name(blank:false, unique:true, maxSize:30)

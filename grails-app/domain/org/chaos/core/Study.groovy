@@ -17,7 +17,7 @@ class Study {
 	Date dateCreated
 	Date lastUpdated
 	
-	static hasMany = [eventTypes:EventType]
+	static hasMany = [eventTypes:EventType, studyCenters: StudyCenter]
 	
     static constraints = {
 		name(blank:false, maxSize:20, unique:true)
