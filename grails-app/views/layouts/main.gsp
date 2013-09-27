@@ -1,28 +1,169 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
-		<g:layoutHead/>
-		<r:layoutResources />
-	</head>
-	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
-		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-		<g:javascript library="application"/>
-		<r:layoutResources />
-	</body>
-</html>
+<g:applyLayout name="site">
+    <html>
+    <head>
+        <g:layoutHead/>
+        <r:layoutResources />
+    </head>
+    <body>
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/LINK_HOME_PAGE">{{ ACTIVE LINK }}</a></li>
+                    <li><a href="/LINK_ALTERNATE">{{ LINK }}</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ DROPDOWN }} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">{{ DROP DOWN HEADER }}</li>
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/LINK_ALTERNATE">{{ LINK }}</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ USER }} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">{{ DROP DOWN HEADER }}</li>
+                            <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.navbar -->
+
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <!-- NAVIGATION -->
+            <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
+                <div class="well well-xs">
+                    <ul class="nav">
+                        <li class="header">Sidebar</li>
+                        <li class="active"><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="header">Sidebar</li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ DROPDOWN }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">{{ DROP DOWN HEADER }}</li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            </ul>
+                        </li>
+                        <li>Sidebar</li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ DROPDOWN }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">{{ DROP DOWN HEADER }}</li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                                <li><a href="/LINK_DROP_DOWN_ALTERNATE">{{ LINK }}</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+            <!-- END NAVIGATION -->
+
+            <!-- MAIN CONTENT -->
+            <div class="col-xs-12 col-sm-9">
+                <p class="pull-left visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                </p>
+
+                <!-- START ACTUAL DATA -->
+                <div id="main-content">
+                    <div id="breadcrumbs" class="hidden-xs">
+                        <g:pageProperty name="page.breadcrumbs"/>
+                        <!-- Breadcrumb
+                                <ul class="breadcrumb">
+                                    <li><span class="glyphicon glyphicon-home"></span><a href="/LINK_HOME">{{ LINK HOME }}</a></li>
+                                    <li><span class="glyphicon glyphicon-list"></span><a href="/LINK_LIST">{{ LIST }}</a></li>
+                                    <li><span class="glyphicon glyphicon-list active"></span><a href="/LINK_LIST">{{ LIST }}</a></li>
+                                </ul>
+                                -->
+                    </div>
+
+                    <div id="page-content" class="clearfix">
+                        <div class="page-header">
+                            <h3>
+                                <!-- page.banner -->
+                                <g:pageProperty name="page.banner"/>
+                                <small>
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <!-- page.banner-description -->
+                                    <g:pageProperty name="page.banner-description"/>
+                                    <!-- end page.banner-description -->
+                                </small>
+                            </h3>
+                        </div>
+                        <!--/.page-header-->
+
+                        <div class="row-fluid">
+
+                            <g:if test="${flash.message}">
+                                <div class="alert alert-info">
+                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                    <g:pageProperty name="page.message"/>
+                                </div>
+                            </g:if>
+                            <g:pageProperty name="page.errors"/>
+                            <g:pageProperty name="page.detail"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="scroll-top" class="btn-sm pull-right">
+            top <span class="glyphicon glyphicon-arrow-up"></span>
+        </a>
+
+        <div id="footer">
+            <span class="left">
+                <g:pageProperty name="page.footer-left"/>
+                <g:message code="application.version.label" default="Version" />: <g:meta name="app.version"/>
+            </span>
+            <span class="right">
+                <g:pageProperty name="page.footer-right"/>
+            &copy; <g:message code="copyright.year" default="" /> <g:message code="company.name" default=""/>
+            </span>
+        </div>
+    </div>
+    <r:layoutResources />
+    </body>
+    </html>
+</g:applyLayout>
