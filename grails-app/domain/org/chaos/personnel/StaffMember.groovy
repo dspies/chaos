@@ -38,6 +38,8 @@ class StaffMember {
 
     static transients = [ "fullName" ]
 
+    static hasMany = [certifications: StaffCertification]
+
     static constraints = {
         firstName(blank:false, maxSize:40)
         lastName(blank:false, maxSize:40)
