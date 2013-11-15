@@ -3,6 +3,7 @@ import groovy.transform.EqualsAndHashCode
 
 /**
  * Brief description
+ *
  * @author your name
  */
 @EqualsAndHashCode

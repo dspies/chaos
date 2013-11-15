@@ -3,11 +3,13 @@
 import grails.test.mixin.*
 import org.junit.*
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(@artifact.testclass@)
+@Unroll
 class @artifact.name@ extends Specification {
 
     void "(fieldName) constraint - #errorMessage"() {
